@@ -5,8 +5,9 @@ Created as part of a QA portfolio to demonstrate manual API testing skills.
 
 ## Tools
 
-- Postman
-- JavaScript (pm.test assertions)
+- Postman — API testing & collections
+- JavaScript — pm.test assertions
+- Git & GitHub — version control & repository management
 
 ## Collection Structure
 
