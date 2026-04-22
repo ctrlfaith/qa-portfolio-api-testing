@@ -1,487 +1,594 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QA Portfolio — Project 1 Summary</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&display=swap');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ctrlfaith Portfolio — Project Summary</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&display=swap");
 
-  :root {
-    --bg: #0d0d0d;
-    --surface: #161616;
-    --surface2: #1f1f1f;
-    --border: #2a2a2a;
-    --accent: #00e5a0;
-    --accent2: #ff6b6b;
-    --accent3: #ffd166;
-    --accent4: #6b9fff;
-    --text: #e8e8e8;
-    --text-muted: #888;
-    --text-dim: #555;
-    --critical: #ff4d4d;
-    --high: #ff9f43;
-    --pass: #00e5a0;
-    --bug: #ff6b6b;
-  }
+      :root {
+        --bg: #0d0d0d;
+        --surface: #161616;
+        --surface2: #1f1f1f;
+        --border: #2a2a2a;
+        --accent: #00e5a0;
+        --accent2: #ff6b6b;
+        --accent3: #ffd166;
+        --accent4: #6b9fff;
+        --text: #e8e8e8;
+        --text-muted: #888;
+        --text-dim: #555;
+        --critical: #ff4d4d;
+        --high: #ff9f43;
+        --pass: #00e5a0;
+        --bug: #ff6b6b;
+      }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'IBM Plex Sans Thai', sans-serif;
-    font-size: 14px;
-    line-height: 1.7;
-    padding: 48px 24px;
-    max-width: 860px;
-    margin: 0 auto;
-  }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "IBM Plex Sans Thai", sans-serif;
+        font-size: 14px;
+        line-height: 1.7;
+        padding: 48px 24px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
 
-  /* Header */
-  .header {
-    border-left: 3px solid var(--accent);
-    padding-left: 20px;
-    margin-bottom: 48px;
-  }
-  .header-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .header h1 {
-    font-size: 26px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-  .header-meta {
-    font-size: 13px;
-    color: var(--text-muted);
-    font-family: 'IBM Plex Mono', monospace;
-  }
+      /* Header */
+      .header {
+        border-left: 3px solid var(--accent);
+        padding-left: 20px;
+        margin-bottom: 48px;
+      }
+      .header-label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .header h1 {
+        font-size: 26px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 6px;
+      }
+      .header-meta {
+        font-size: 13px;
+        color: var(--text-muted);
+        font-family: "IBM Plex Mono", monospace;
+      }
 
-  /* Section */
-  .section { margin-bottom: 40px; }
-  .section-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
+      /* Section */
+      .section {
+        margin-bottom: 40px;
+      }
+      .section-title {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border);
+      }
 
-  /* Stats row */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 40px;
-  }
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-    text-align: center;
-  }
-  .stat-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat-label { font-size: 12px; color: var(--text-muted); }
-  .c-green { color: var(--accent); }
-  .c-red { color: var(--accent2); }
-  .c-yellow { color: var(--accent3); }
-  .c-blue { color: var(--accent4); }
+      /* Stats row */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-bottom: 40px;
+      }
+      .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-num {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+      .c-green {
+        color: var(--accent);
+      }
+      .c-red {
+        color: var(--accent2);
+      }
+      .c-yellow {
+        color: var(--accent3);
+      }
+      .c-blue {
+        color: var(--accent4);
+      }
 
-  /* Request table */
-  .req-table { width: 100%; border-collapse: collapse; }
-  .req-table th {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .req-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    vertical-align: middle;
-  }
-  .req-table tr:last-child td { border-bottom: none; }
-  .req-table tr:hover td { background: var(--surface); }
+      /* Request table */
+      .req-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .req-table th {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .req-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        font-size: 13px;
+        vertical-align: middle;
+      }
+      .req-table tr:last-child td {
+        border-bottom: none;
+      }
+      .req-table tr:hover td {
+        background: var(--surface);
+      }
 
-  .method {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-  }
-  .get { background: #1a3a2a; color: #00e5a0; }
-  .post { background: #2a2a1a; color: #ffd166; }
-  .put { background: #1a2a3a; color: #6b9fff; }
-  .delete { background: #3a1a1a; color: #ff6b6b; }
+      .method {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 4px;
+        display: inline-block;
+      }
+      .get {
+        background: #1a3a2a;
+        color: #00e5a0;
+      }
+      .post {
+        background: #2a2a1a;
+        color: #ffd166;
+      }
+      .put {
+        background: #1a2a3a;
+        color: #6b9fff;
+      }
+      .delete {
+        background: #3a1a1a;
+        color: #ff6b6b;
+      }
 
-  .status {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .s200 { color: var(--pass); }
-  .s201 { color: var(--pass); }
-  .s403 { color: var(--accent3); }
-  .s404 { color: var(--accent3); }
-  .s500 { color: var(--critical); }
+      .status {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .s200 {
+        color: var(--pass);
+      }
+      .s201 {
+        color: var(--pass);
+      }
+      .s403 {
+        color: var(--accent3);
+      }
+      .s404 {
+        color: var(--accent3);
+      }
+      .s500 {
+        color: var(--critical);
+      }
 
-  .result-pass {
-    font-size: 11px;
-    color: var(--pass);
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .result-bug {
-    font-size: 11px;
-    color: var(--bug);
-    font-family: 'IBM Plex Mono', monospace;
-  }
+      .result-pass {
+        font-size: 11px;
+        color: var(--pass);
+        font-family: "IBM Plex Mono", monospace;
+      }
+      .result-bug {
+        font-size: 11px;
+        color: var(--bug);
+        font-family: "IBM Plex Mono", monospace;
+      }
 
-  /* Bug cards */
-  .bug-list { display: flex; flex-direction: column; gap: 10px; }
-  .bug-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 12px;
-    align-items: start;
-  }
-  .bug-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--text-dim);
-    padding-top: 2px;
-  }
-  .bug-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-  .bug-detail {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-  .bug-detail span {
-    font-family: 'IBM Plex Mono', monospace;
-    background: var(--surface2);
-    padding: 1px 6px;
-    border-radius: 3px;
-    font-size: 11px;
-  }
-  .severity {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    letter-spacing: 0.05em;
-  }
-  .sev-critical { background: #3a1515; color: var(--critical); border: 1px solid #5a2020; }
-  .sev-high { background: #3a2a10; color: var(--high); border: 1px solid #5a4010; }
+      /* Bug cards */
+      .bug-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .bug-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 12px;
+        align-items: start;
+      }
+      .bug-num {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        color: var(--text-dim);
+        padding-top: 2px;
+      }
+      .bug-title {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+      .bug-detail {
+        font-size: 12px;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .bug-detail span {
+        font-family: "IBM Plex Mono", monospace;
+        background: var(--surface2);
+        padding: 1px 6px;
+        border-radius: 3px;
+        font-size: 11px;
+      }
+      .severity {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 4px;
+        white-space: nowrap;
+        letter-spacing: 0.05em;
+      }
+      .sev-critical {
+        background: #3a1515;
+        color: var(--critical);
+        border: 1px solid #5a2020;
+      }
+      .sev-high {
+        background: #3a2a10;
+        color: var(--high);
+        border: 1px solid #5a4010;
+      }
 
-  /* Footer */
-  .footer {
-    margin-top: 48px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-left { font-size: 12px; color: var(--text-dim); }
-  .footer-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-  }
+      /* Footer */
+      .footer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer-left {
+        font-size: 12px;
+        color: var(--text-dim);
+      }
+      .footer-link {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        color: var(--accent);
+        text-decoration: none;
+      }
 
-  .tag {
-    display: inline-block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 8px;
-    color: var(--text-muted);
-    margin-right: 4px;
-    margin-bottom: 4px;
-  }
-</style>
-</head>
-<body>
-
-<div class="header">
-  <div class="header-label">Ctrlfaith Portfolio · QA Project</div>
-  <h1>Restful Booker API Testing</h1>
-  <div class="header-meta">github.com/ctrlfaith/qa-portfolio-api-testing · April 21, 2026</div>
-</div>
-
-<!-- Stats -->
-<div class="stats">
-  <div class="stat-card">
-    <div class="stat-num c-green">9</div>
-    <div class="stat-label">Total Requests</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num c-blue">9</div>
-    <div class="stat-label">Edge Cases</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num c-red">5</div>
-    <div class="stat-label">Bugs Found</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num c-yellow">2</div>
-    <div class="stat-label">Critical Bugs</div>
-  </div>
-</div>
-
-<!-- Tools -->
-<div class="section">
-  <div class="section-title">Tools & Stack</div>
-  <span class="tag">Postman</span>
-  <span class="tag">JavaScript (pm.test)</span>
-  <span class="tag">Git</span>
-  <span class="tag">GitHub</span>
-  <span class="tag">restful-booker.herokuapp.com</span>
-</div>
-
-<!-- Main requests -->
-<div class="section">
-  <div class="section-title">Main Collection — Happy Path & CRUD</div>
-  <table class="req-table">
-    <thead>
-      <tr>
-        <th>Folder</th>
-        <th>Request</th>
-        <th>Method</th>
-        <th>Status</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="color:var(--text-muted)">Auth</td>
-        <td>Health Check</td>
-        <td><span class="method get">GET</span></td>
-        <td><span class="status s201">201</span></td>
-        <td><span class="result-pass">✓ PASS</span></td>
-      </tr>
-      <tr>
-        <td style="color:var(--text-muted)">Auth</td>
-        <td>Get Token</td>
-        <td><span class="method post">POST</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-pass">✓ PASS — token saved to env</span></td>
-      </tr>
-      <tr>
-        <td style="color:var(--text-muted)">Booking - Read</td>
-        <td>Get All Bookings</td>
-        <td><span class="method get">GET</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-pass">✓ PASS — array, has bookingid</span></td>
-      </tr>
-      <tr>
-        <td style="color:var(--text-muted)">Booking - Read</td>
-        <td>Get Booking by ID</td>
-        <td><span class="method get">GET</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-pass">✓ PASS — all fields present</span></td>
-      </tr>
-      <tr>
-        <td style="color:var(--text-muted)">Booking - Write</td>
-        <td>Create Booking</td>
-        <td><span class="method post">POST</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-pass">✓ PASS — bookingid returned</span></td>
-      </tr>
-      <tr>
-        <td style="color:var(--text-muted)">Booking - Write</td>
-        <td>Update Booking</td>
-        <td><span class="method put">PUT</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-pass">✓ PASS — data updated correctly</span></td>
-      </tr>
-      <tr>
-        <td style="color:var(--text-muted)">Booking - Write</td>
-        <td>Delete Booking</td>
-        <td><span class="method delete">DEL</span></td>
-        <td><span class="status s201">201</span></td>
-        <td><span class="result-pass">✓ PASS — "Created" response</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- Edge cases -->
-<div class="section">
-  <div class="section-title">Edge Cases & Security Testing</div>
-  <table class="req-table">
-    <thead>
-      <tr>
-        <th>Request</th>
-        <th>Method</th>
-        <th>Status</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Get Booking - Invalid ID (999999)</td>
-        <td><span class="method get">GET</span></td>
-        <td><span class="status s404">404</span></td>
-        <td><span class="result-pass">✓ PASS — Not Found</span></td>
-      </tr>
-      <tr>
-        <td>Create Booking - Missing Fields</td>
-        <td><span class="method post">POST</span></td>
-        <td><span class="status s500">500</span></td>
-        <td><span class="result-bug">✗ BUG — expected 400</span></td>
-      </tr>
-      <tr>
-        <td>Delete Booking - No Token</td>
-        <td><span class="method delete">DEL</span></td>
-        <td><span class="status s403">403</span></td>
-        <td><span class="result-pass">✓ PASS — Forbidden</span></td>
-      </tr>
-      <tr>
-        <td>Get Booking - String ID ("abc")</td>
-        <td><span class="method get">GET</span></td>
-        <td><span class="status s404">404</span></td>
-        <td><span class="result-pass">✓ acceptable — treated as not found</span></td>
-      </tr>
-      <tr>
-        <td>Create Booking - Invalid Date</td>
-        <td><span class="method post">POST</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-bug">✗ BUG — stored as "0NaN-aN-aN"</span></td>
-      </tr>
-      <tr>
-        <td>Create Booking - Negative Price (-999)</td>
-        <td><span class="method post">POST</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-bug">✗ BUG — accepted</span></td>
-      </tr>
-      <tr>
-        <td>Get Booking - SQL Injection</td>
-        <td><span class="method get">GET</span></td>
-        <td><span class="status s404">404</span></td>
-        <td><span class="result-pass">✓ PASS — not processed</span></td>
-      </tr>
-      <tr>
-        <td>Create Booking - Checkout Before Checkin</td>
-        <td><span class="method post">POST</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-bug">✗ BUG — accepted</span></td>
-      </tr>
-      <tr>
-        <td>Create Booking - XSS Injection</td>
-        <td><span class="method post">POST</span></td>
-        <td><span class="status s200">200</span></td>
-        <td><span class="result-bug">✗ BUG — raw &lt;script&gt; stored</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- Bugs found -->
-<div class="section">
-  <div class="section-title">Bugs Found (5)</div>
-  <div class="bug-list">
-
-    <div class="bug-card">
-      <div class="bug-num">#1</div>
-      <div>
-        <div class="bug-title">Missing required fields returns 500 instead of 400</div>
-        <div class="bug-detail">
-          ทดสอบโดยส่ง request สร้าง booking ที่มีแค่ <span>firstname</span> อย่างเดียว — Expected Result: ระบบควรตรวจสอบข้อมูลและตอบกลับ 400 Bad Request แต่กลับตอบกลับด้วย 500 Internal Server Error แทน
-        </div>
+      .tag {
+        display: inline-block;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 2px 8px;
+        color: var(--text-muted);
+        margin-right: 4px;
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-label">Ctrlfaith Portfolio · QA Project</div>
+      <h1>Restful Booker API Testing</h1>
+      <div class="header-meta">
+        github.com/ctrlfaith/qa-portfolio-api-testing · April 21, 2026
       </div>
-      <span class="severity sev-high">HIGH</span>
     </div>
 
-    <div class="bug-card">
-      <div class="bug-num">#2</div>
-      <div>
-        <div class="bug-title">Invalid date format accepted and corrupted in database</div>
-        <div class="bug-detail">
-          ทดสอบโดยส่ง <span>"checkin": "not-a-date"</span> — Expected Result: ระบบควรปฏิเสธ แต่กลับสร้าง booking สำเร็จและเก็บวันที่เป็น <span>0NaN-aN-aN</span> ลงฐานข้อมูล
-        </div>
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-num c-green">9</div>
+        <div class="stat-label">Total Requests</div>
       </div>
-      <span class="severity sev-high">HIGH</span>
+      <div class="stat-card">
+        <div class="stat-num c-blue">9</div>
+        <div class="stat-label">Edge Cases</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num c-red">5</div>
+        <div class="stat-label">Bugs Found</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num c-yellow">2</div>
+        <div class="stat-label">Critical Bugs</div>
+      </div>
     </div>
 
-    <div class="bug-card">
-      <div class="bug-num">#3</div>
-      <div>
-        <div class="bug-title">Negative price accepted without validation</div>
-        <div class="bug-detail">
-          ทดสอบโดยส่ง <span>"totalprice": -999</span> — Expected Result: ระบบควรปฏิเสธ แต่กลับสร้าง booking สำเร็จด้วยราคา -999
-        </div>
-      </div>
-      <span class="severity sev-critical">CRITICAL</span>
+    <!-- Tools -->
+    <div class="section">
+      <div class="section-title">Tools & Stack</div>
+      <span class="tag">Postman</span>
+      <span class="tag">JavaScript (pm.test)</span>
+      <span class="tag">Git</span>
+      <span class="tag">GitHub</span>
+      <span class="tag">restful-booker.herokuapp.com</span>
     </div>
 
-    <div class="bug-card">
-      <div class="bug-num">#4</div>
-      <div>
-        <div class="bug-title">Checkout date before checkin date accepted</div>
-        <div class="bug-detail">
-          ทดสอบโดยส่ง checkin วันที่ 31 ธันวาคม 2025 แต่ checkout วันที่ 1 มกราคม 2025 ซึ่งเป็นปีเดียวกัน ทำให้ checkout อยู่ก่อน checkin — Expected Result: ระบบควรปฏิเสธ แต่กลับสร้าง booking สำเร็จ
-        </div>
-      </div>
-      <span class="severity sev-high">HIGH</span>
+    <!-- Main requests -->
+    <div class="section">
+      <div class="section-title">Main Collection — Happy Path & CRUD</div>
+      <table class="req-table">
+        <thead>
+          <tr>
+            <th>Folder</th>
+            <th>Request</th>
+            <th>Method</th>
+            <th>Status</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color: var(--text-muted)">Auth</td>
+            <td>Health Check</td>
+            <td><span class="method get">GET</span></td>
+            <td><span class="status s201">201</span></td>
+            <td><span class="result-pass">✓ PASS</span></td>
+          </tr>
+          <tr>
+            <td style="color: var(--text-muted)">Auth</td>
+            <td>Get Token</td>
+            <td><span class="method post">POST</span></td>
+            <td><span class="status s200">200</span></td>
+            <td>
+              <span class="result-pass">✓ PASS — token saved to env</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="color: var(--text-muted)">Booking - Read</td>
+            <td>Get All Bookings</td>
+            <td><span class="method get">GET</span></td>
+            <td><span class="status s200">200</span></td>
+            <td>
+              <span class="result-pass">✓ PASS — array, has bookingid</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="color: var(--text-muted)">Booking - Read</td>
+            <td>Get Booking by ID</td>
+            <td><span class="method get">GET</span></td>
+            <td><span class="status s200">200</span></td>
+            <td>
+              <span class="result-pass">✓ PASS — all fields present</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="color: var(--text-muted)">Booking - Write</td>
+            <td>Create Booking</td>
+            <td><span class="method post">POST</span></td>
+            <td><span class="status s200">200</span></td>
+            <td>
+              <span class="result-pass">✓ PASS — bookingid returned</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="color: var(--text-muted)">Booking - Write</td>
+            <td>Update Booking</td>
+            <td><span class="method put">PUT</span></td>
+            <td><span class="status s200">200</span></td>
+            <td>
+              <span class="result-pass">✓ PASS — data updated correctly</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="color: var(--text-muted)">Booking - Write</td>
+            <td>Delete Booking</td>
+            <td><span class="method delete">DEL</span></td>
+            <td><span class="status s201">201</span></td>
+            <td>
+              <span class="result-pass">✓ PASS — "Created" response</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="bug-card">
-      <div class="bug-num">#5</div>
-      <div>
-        <div class="bug-title">XSS payload stored without sanitization</div>
-        <div class="bug-detail">
-          ทดสอบโดยส่ง <span>&lt;script&gt;alert('xss')&lt;/script&gt;</span> แทนชื่อลูกค้า — Expected Result: ระบบควรกรองออกหรือปฏิเสธ แต่กลับเก็บค่าดิบไว้ในฐานข้อมูล หากนำชื่อนี้ไปแสดงผลบนหน้าเว็บโดยไม่ได้กรองออก script จะรันในเบราว์เซอร์ของผู้ใช้คนอื่นโดยอัตโนมัติ ซึ่งอาจถูกนำไปใช้ขโมย session หรือข้อมูลส่วนตัวได้
-        </div>
-      </div>
-      <span class="severity sev-critical">CRITICAL</span>
+    <!-- Edge cases -->
+    <div class="section">
+      <div class="section-title">Edge Cases & Security Testing</div>
+      <table class="req-table">
+        <thead>
+          <tr>
+            <th>Request</th>
+            <th>Method</th>
+            <th>Status</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Get Booking - Invalid ID (999999)</td>
+            <td><span class="method get">GET</span></td>
+            <td><span class="status s404">404</span></td>
+            <td><span class="result-pass">✓ PASS — Not Found</span></td>
+          </tr>
+          <tr>
+            <td>Create Booking - Missing Fields</td>
+            <td><span class="method post">POST</span></td>
+            <td><span class="status s500">500</span></td>
+            <td><span class="result-bug">✗ BUG — expected 400</span></td>
+          </tr>
+          <tr>
+            <td>Delete Booking - No Token</td>
+            <td><span class="method delete">DEL</span></td>
+            <td><span class="status s403">403</span></td>
+            <td><span class="result-pass">✓ PASS — Forbidden</span></td>
+          </tr>
+          <tr>
+            <td>Get Booking - String ID ("abc")</td>
+            <td><span class="method get">GET</span></td>
+            <td><span class="status s404">404</span></td>
+            <td>
+              <span class="result-pass"
+                >✓ acceptable — treated as not found</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Create Booking - Invalid Date</td>
+            <td><span class="method post">POST</span></td>
+            <td><span class="status s200">200</span></td>
+            <td>
+              <span class="result-bug">✗ BUG — stored as "0NaN-aN-aN"</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Create Booking - Negative Price (-999)</td>
+            <td><span class="method post">POST</span></td>
+            <td><span class="status s200">200</span></td>
+            <td><span class="result-bug">✗ BUG — accepted</span></td>
+          </tr>
+          <tr>
+            <td>Get Booking - SQL Injection</td>
+            <td><span class="method get">GET</span></td>
+            <td><span class="status s404">404</span></td>
+            <td><span class="result-pass">✓ PASS — not processed</span></td>
+          </tr>
+          <tr>
+            <td>Create Booking - Checkout Before Checkin</td>
+            <td><span class="method post">POST</span></td>
+            <td><span class="status s200">200</span></td>
+            <td><span class="result-bug">✗ BUG — accepted</span></td>
+          </tr>
+          <tr>
+            <td>Create Booking - XSS Injection</td>
+            <td><span class="method post">POST</span></td>
+            <td><span class="status s200">200</span></td>
+            <td>
+              <span class="result-bug">✗ BUG — raw &lt;script&gt; stored</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-  </div>
-</div>
+    <!-- Bugs found -->
+    <div class="section">
+      <div class="section-title">Bugs Found (5)</div>
+      <div class="bug-list">
+        <div class="bug-card">
+          <div class="bug-num">#1</div>
+          <div>
+            <div class="bug-title">
+              Missing required fields returns 500 instead of 400
+            </div>
+            <div class="bug-detail">
+              ทดสอบโดยส่ง request สร้าง booking ที่มีแค่
+              <span>firstname</span> อย่างเดียว — Expected Result:
+              ระบบควรตรวจสอบข้อมูลและตอบกลับ 400 Bad Request แต่กลับตอบกลับด้วย
+              500 Internal Server Error แทน
+            </div>
+          </div>
+          <span class="severity sev-high">HIGH</span>
+        </div>
 
-<div class="footer">
-  <div class="footer-left">Phuriphatthanachai Rattanatham · Ctrlfaith Portfolio 2026</div>
-  <a class="footer-link" href="https://github.com/ctrlfaith/qa-portfolio-api-testing">github.com/ctrlfaith/qa-portfolio-api-testing</a>
-</div>
+        <div class="bug-card">
+          <div class="bug-num">#2</div>
+          <div>
+            <div class="bug-title">
+              Invalid date format accepted and corrupted in database
+            </div>
+            <div class="bug-detail">
+              ทดสอบโดยส่ง <span>"checkin": "not-a-date"</span> — Expected
+              Result: ระบบควรปฏิเสธ แต่กลับสร้าง booking สำเร็จและเก็บวันที่เป็น
+              <span>0NaN-aN-aN</span> ลงฐานข้อมูล
+            </div>
+          </div>
+          <span class="severity sev-high">HIGH</span>
+        </div>
 
-</body>
+        <div class="bug-card">
+          <div class="bug-num">#3</div>
+          <div>
+            <div class="bug-title">
+              Negative price accepted without validation
+            </div>
+            <div class="bug-detail">
+              ทดสอบโดยส่ง <span>"totalprice": -999</span> — Expected Result:
+              ระบบควรปฏิเสธ แต่กลับสร้าง booking สำเร็จด้วยราคา -999
+            </div>
+          </div>
+          <span class="severity sev-critical">CRITICAL</span>
+        </div>
+
+        <div class="bug-card">
+          <div class="bug-num">#4</div>
+          <div>
+            <div class="bug-title">
+              Checkout date before checkin date accepted
+            </div>
+            <div class="bug-detail">
+              ทดสอบโดยส่ง checkin วันที่ 31 ธันวาคม 2025 แต่ checkout วันที่ 1
+              มกราคม 2025 ซึ่งเป็นปีเดียวกัน ทำให้ checkout อยู่ก่อน checkin —
+              Expected Result: ระบบควรปฏิเสธ แต่กลับสร้าง booking สำเร็จ
+            </div>
+          </div>
+          <span class="severity sev-high">HIGH</span>
+        </div>
+
+        <div class="bug-card">
+          <div class="bug-num">#5</div>
+          <div>
+            <div class="bug-title">XSS payload stored without sanitization</div>
+            <div class="bug-detail">
+              ทดสอบโดยส่ง
+              <span>&lt;script&gt;alert('xss')&lt;/script&gt;</span>
+              แทนชื่อลูกค้า — Expected Result: ระบบควรกรองออกหรือปฏิเสธ
+              แต่กลับเก็บค่าดิบไว้ในฐานข้อมูล
+              หากนำชื่อนี้ไปแสดงผลบนหน้าเว็บโดยไม่ได้กรองออก script
+              จะรันในเบราว์เซอร์ของผู้ใช้คนอื่นโดยอัตโนมัติ
+              ซึ่งอาจถูกนำไปใช้ขโมย session หรือข้อมูลส่วนตัวได้
+            </div>
+          </div>
+          <span class="severity sev-critical">CRITICAL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        Phuriphatthanachai Rattanatham · Ctrlfaith Portfolio 2026
+      </div>
+      <a
+        class="footer-link"
+        href="https://github.com/ctrlfaith/qa-portfolio-api-testing"
+        >github.com/ctrlfaith/qa-portfolio-api-testing</a
+      >
+    </div>
+  </body>
 </html>
