@@ -3,6 +3,8 @@
 API test collection for [Restful Booker](https://restful-booker.herokuapp.com) built with Postman.  
 Created as part of a QA portfolio to demonstrate manual API testing skills.
 
+🔗 **[View Project Summary](https://ctrlfaith.github.io/qa-portfolio-api-testing/)**
+
 ## Tools
 
 - Postman — API testing & collections
