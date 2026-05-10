@@ -36,3 +36,7 @@ Created as part of a QA portfolio to demonstrate manual API testing skills.
 | 3   | Create Booking - Negative Price          | 400 Bad Request  | 200 OK — accepts `-999`                | Critical |
 | 4   | Create Booking - Checkout Before Checkin | 400 Bad Request  | 200 OK — accepts impossible date range | High     |
 | 5   | Create Booking - XSS Injection           | 400 or sanitized | 200 OK — stores raw `<script>` tag     | Critical |
+
+## 👨‍💻 Author
+**Name:** Phuriphatthanachai Rattanatham  
+**GitHub:** [@ctrlfaith](https://github.com/ctrlfaith)
